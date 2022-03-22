@@ -1,0 +1,16 @@
+{
+  "name": "2103",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  },
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "supertest": "^6.2.2"
+  }
+}
