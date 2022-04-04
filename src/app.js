@@ -1,21 +1,24 @@
+require('dotenv').config({
+    path: '.env'
+})
+
 const express = require('express');
 
-const app = express();
+class AppController {
+    constructor() {
+        this.express = express();
 
-app.use(express.json());
-
-app.get("/", (req, res) => {
-    res.status(200).send({msg: "Hello World"});
-})
-
-app.post("/sum", (req, res) => {
-    try{
-        const { a, b } = req.body;
-        res.status(200).send({result: a + b });
-    } catch(err) {
-        return res.status(400).send({message: err});
+        this.middlewares();
+        this.routes();
     }
-})
 
-module.exports = app;
+    middlewares() {
+        this.express.use(express.json());
+    }
 
+    routes() {
+        this.express.use(require('./routes'));
+    }
+}
+
+module.exports = new AppController().express
