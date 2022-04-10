@@ -5,9 +5,7 @@ const { User, Title } = require('../../src/app/models');
 const truncate = require('../utils/truncate');
 
 describe('Title', () => {
-    beforeEach(async () => {
-        await truncate();
-    });
+    
 
     it('should show titles', async() => {
         const response = await request(app)
