@@ -1,6 +1,6 @@
 const faker = require('faker-br');
 const { factory } = require('factory-girl');
-const { User } = require('../src/app/models');
+const { User, Title } = require('../src/app/models');
 
 factory.define('User', User, { 
     name: faker.name.findName(), 
@@ -10,6 +10,14 @@ factory.define('User', User, {
     address: faker.address.streetAddress(),
     telephone: faker.phone.phoneNumber(),
     type: 'manager'
+})
+
+factory.define('Title', Title, { 
+    name: faker.name.title(), 
+    quantity: faker.random.number(), 
+    deadline: faker.random.number(),
+    description: faker.random.words(),
+    type: 'livros'
 })
 
 module.exports = factory;

@@ -28,7 +28,8 @@ describe('User', () => {
 
     it('should login to create a user', async () => {
         const user = await factory.create('User', {
-            password: '123123'
+            password: '123123',
+            type: 'manager',
         })
 
         const newUser = { 

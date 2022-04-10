@@ -5,7 +5,7 @@ class UserController {
     async index(req, res) {
         const userLogged = await User.findOne({ where: { id: req.userId } });
 
-        if(userLogged.type != 'manager'){
+        if(userLogged && userLogged.type != 'manager'){
             return res.status(401).json({ message: 'Forbiden access' });
         }
 
@@ -19,7 +19,7 @@ class UserController {
         
         const userLogged = await User.findOne({ where: { id: req.userId } });
 
-        if(userLogged.type != 'manager'){
+        if(userLogged && userLogged.type != 'manager'){
             return res.status(401).json({ message: 'Forbiden access' });
         }
 
@@ -33,7 +33,7 @@ class UserController {
         const userLogged = await User.findOne({ where: { id: req.userId } });
         const userReq = req.body;
 
-        if(userLogged.type != 'manager'){
+        if(userLogged && userLogged.type != 'manager'){
             return res.status(401).json({ message: 'Forbiden access' });
         }
 
@@ -46,7 +46,7 @@ class UserController {
     async delete(req, res) {
         const userLogged = await User.findOne({ where: { id: req.userId } });
 
-        if(userLogged.type != 'manager'){
+        if(userLogged && userLogged.type != 'manager'){
             return res.status(401).json({ message: 'Forbiden access' });
         }
 
@@ -60,7 +60,7 @@ class UserController {
         const { name, email, password, cpf, address, telephone, type } = req.body;
         const userLogged = await User.findOne({ where: { id: req.userId } });
 
-        if(userLogged.type != 'manager'){
+        if(userLogged && userLogged.type != 'manager'){
             return res.status(401).json({ message: 'Forbiden access' });
         }
 
