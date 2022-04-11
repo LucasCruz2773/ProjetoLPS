@@ -2,7 +2,7 @@
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    return queryInterface.createTable('titlereservations', {
+    return queryInterface.createTable('treservations', {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -12,15 +12,25 @@ module.exports = {
       id_reservation: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references: { model: 'reservations', key: 'id' }
       },
       id_title: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references: { model: 'titles', key: 'id' }
+      },
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false.valueOf,
+      },
+      updated_at: {
+        type: Sequelize.DATE,
+        allowNull: false.valueOf,
       }
-    })
+    });
   },
 
   async down (queryInterface, Sequelize) {
-    return queryInterface.dropTable('titlereservations')
+    return queryInterface.dropTable('treservations')
   }
 };

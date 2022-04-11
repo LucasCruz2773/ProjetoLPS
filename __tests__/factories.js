@@ -14,8 +14,8 @@ factory.define('User', User, {
 
 factory.define('Title', Title, { 
     name: faker.name.title(), 
-    quantity: faker.random.number(), 
-    deadline: faker.random.number(),
+    quantity: 12, 
+    deadline: 7,
     description: faker.random.words(),
     type: 'livros'
 })

@@ -23,6 +23,9 @@ routes.post('/title', TitleController.store);
 routes.put('/title/:id', TitleController.update);
 routes.delete('/title/:id', TitleController.delete);
 
+routes.get('/reservation', ReservationController.index);
 routes.post('/reservation', ReservationController.reserve);
+routes.post('/teacher_reservation', ReservationController.reserveTeacher);
+routes.put('/reservation/:id', ReservationController.finishReserve);
 
 module.exports = routes;
