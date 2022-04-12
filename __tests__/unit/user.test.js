@@ -32,7 +32,7 @@ describe('User', () => {
 
         const newUser = { 
             name: 'Lucas', 
-            email: 'teste2@gmail.com', 
+            email: 'teste10@gmail.com', 
             password: '123123',
             cpf: '48980859899',
             address: 'Rua tal',
@@ -119,7 +119,7 @@ describe('User', () => {
 
         const newUser = { 
             name: 'Lucas', 
-            email: 'teste@gmail.com',
+            email: 'teste9@gmail.com',
             password: '123123',
             cpf: '48980859899',
             address: 'Rua tal',
